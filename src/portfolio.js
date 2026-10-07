@@ -1,9 +1,9 @@
 export const profile = {
   name: 'Nuzran Nazeer', initials: 'NN', role: 'Full-stack & mobile developer', email: 'm.nuzrannazeer@gmail.com',
   github: 'https://github.com/Nuzran-Nazeer', linkedin: 'https://www.linkedin.com/in/nuzran-nazeer/',
-  about: 'I build full-stack web applications and offline-first mobile experiences, with a focus on server-side access controls, reliable data flows, and interfaces that are clear to use.',
-  approach: 'My work ranges from confidential review workflows to recurring transaction scheduling. I enjoy turning complex requirements into working systems, testing the details, and helping a team deliver together.',
-  skills: ['React', 'React Native', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB', 'WatermelonDB', 'Playwright', 'Git', 'Vercel', 'Jira'],
+  about: 'I am an aspiring software developer building responsive web applications and offline-first mobile experiences. I am currently seeking a software engineering internship where I can contribute to impactful projects and grow as a developer.',
+  approach: 'My work ranges from confidential review workflows to reliable transaction scheduling and on-device AI. I enjoy solving complex problems, learning emerging technologies, and helping a team deliver together.',
+  skills: ['React', 'React Native', 'Angular', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'Vite', 'Node.js', 'Express', 'Python', 'Java', 'MongoDB', 'MySQL', 'WatermelonDB', 'llama.cpp', 'REST APIs', 'JWT', 'Git', 'GitHub', 'VS Code', 'Playwright', 'Vercel', 'Netlify', 'Render', 'AWS', 'DevOps', 'Cloud Computing', 'OOP', 'Agile', 'Jira'],
   education: [
     { title: 'BSc (Hons) Computer Science', institution: 'University of Staffordshire (APIIT)', period: '2026 - Present' },
     { title: 'Diploma in IT', institution: 'British Computer Society (HEQ)', period: '2023 - 2025' },
@@ -12,23 +12,31 @@ export const profile = {
 }
 export const projects = [
   {
-    title: 'Performance & Development Tracker', shortTitle: 'PDT', category: 'Confidential appraisal workflows', visual: 'orbit', role: 'Scrum Master, then Developer', period: 'Jul 2026 - Sep 2026',
+    title: 'Performance & Development Tracker', shortTitle: 'PDT', category: 'Confidential appraisal workflows', visual: 'orbit', role: 'Full Stack Developer',
     tags: ['React', 'Express', 'MongoDB', 'Playwright'], description: 'An appraisal system with confidential 360-degree feedback, built for a client scenario in a four-person Agile team.',
     highlights: [
-      'Built most of the server side of the review cycle: reviewer identity removal, HR coverage, access limited to each user\'s own people, result publication, identity reveal, and an append-only audit trail.',
+      'Designed a layered architecture connecting the dated organisation model, supervision, visibility, and reviewer eligibility.',
+      'Built most of the server side of the review cycle, including reviewer identity removal, HR coverage, result publication, identity reveal, and an append-only audit trail.',
       'Enforced access rules on the server, limiting HR officers to the units they cover and logging sensitive actions for the Head of HR.',
-      'Wrote 18 automated check scripts with 719 checks against a real MongoDB database, and set up a Playwright browser test suite.',
+      'Replaced open account creation with an invitation and activation flow, preventing unauthenticated requests from creating accounts or assigning roles.',
+      'Designed rating normalisation that compares supervisor ratings with their usual leniency and peer feedback, prompting replacement, justification, or escalation of outliers to HR.',
       'Deployed the client and API to Vercel with separate development, test, and live databases on MongoDB Atlas.',
-      'Ran sprint events in Jira and made acceptance criteria a condition of estimation. Delivery rose from 58% of committed points in Sprint 1 to 86% in Sprint 2.',
     ],
     stack: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB', 'Mongoose', 'Yup', 'Playwright', 'Vercel', 'Jira'],
-    metrics: ['719 automated checks', '4-person Agile team', '58% to 86% sprint delivery'], url: 'https://project-pdt.vercel.app', repo: '',
+    metrics: ['4-person Agile team', 'Server-enforced access', 'Audited review workflows'], url: 'https://project-pdt.vercel.app', repo: '',
   },
   {
     title: 'ExpenseTracker', shortTitle: 'ExpenseTracker', category: 'Offline-first personal finance', visual: 'forma', role: 'Mobile App Developer',
-    tags: ['React Native', 'TypeScript', 'WatermelonDB'], description: 'An offline-first expense tracking application for monitoring spending, planning budgets, and scheduling recurring transactions.',
-    highlights: ['Architected scheduled transactions with multiple recurrence patterns, custom intervals, end dates, and occurrence limits.', 'Contributed to offline-first data modeling, WatermelonDB schema design, state management, and scheduling algorithms.', 'Implemented local persistence and real-time updates using WatermelonDB.', 'Built scheduling logic for rescheduling instances, flexible skip operations, and overdue management.'],
-    stack: ['React Native', 'Expo', 'TypeScript', 'WatermelonDB', 'MongoDB'], url: '', repo: '',
+    tags: ['React Native', 'WatermelonDB', 'On-device AI'], description: 'A fully on-device, offline-first personal finance application for monitoring spending, planning budgets, automating recurring transactions, and importing bank transactions from SMS using on-device AI.',
+    highlights: [
+      'Architected scheduled transactions with multiple recurrence patterns, custom intervals, end dates, and occurrence limits.',
+      'Built scheduling logic for instance rescheduling, flexible skips, bulk overdue payments, and pause/resume.',
+      'Redesigned the scheduling engine with timezone-safe dates and a single source of truth for instance state, resolving more than 10 calendar and state bugs.',
+      'Protected payment integrity against duplicate taps and crashes, keeping payments and schedules in sync.',
+      'Built automatic SMS transaction import using on-device AI so financial data stays on the phone.',
+      'Optimised inference with grammar-constrained output, prompt caching, and a regex pre-filter, and designed a two-phase background import with deduplication.',
+    ],
+    stack: ['React Native', 'Expo', 'TypeScript', 'WatermelonDB', 'llama.cpp'], metrics: ['Fully on-device', '10+ bugs resolved', 'AI-powered SMS import'], url: '', repo: '',
   },
   {
     title: 'Drug Prevention & Management System', shortTitle: 'Case management', category: 'Secure stakeholder collaboration', visual: 'terrain', role: 'Full Stack Developer',
@@ -47,11 +55,5 @@ export const projects = [
     description: 'A transportation management platform for route planning, driver assignments, and stakeholder communication.',
     highlights: ['Extended backend APIs and frontend components within the existing architecture.', 'Implemented additional CRUD operations and corresponding interfaces.', 'Integrated document management and WhatsApp notifications.'],
     stack: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Twilio WhatsApp API'], url: '', repo: '',
-  },
-  {
-    title: 'KICKS', shortTitle: 'KICKS', category: 'E-commerce & order management', visual: 'orbit', role: 'Full Stack Developer', tags: ['React', 'Node.js', 'MongoDB'],
-    description: 'An e-commerce application with product browsing, user management, and order workflows.',
-    highlights: ['Developed product catalog, product details, and content management interfaces.', 'Built order management, tracking, and order history features.', 'Created an admin dashboard for order processing and status updates.'],
-    stack: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS'], url: '', repo: '',
   },
 ]
